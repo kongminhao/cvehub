@@ -1,0 +1,13 @@
+version: '3'
+services:
+  python2.7.7:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/root
+    command: ["/bin/bash"]
+  redis:
+    image: "redis:alpine"
